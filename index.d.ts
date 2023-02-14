@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2023 The Stdlib Authors.
@@ -16,27 +16,22 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 2.0
 
-// MODULES //
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
 
-var Complex64 = require( '@stdlib/complex-float32' );
-var addon = require( './../src/addon.node' );
-
-
-// MAIN //
+import { Complex64 } from '@stdlib/types/object';
 
 /**
 * Negates a single-precision complex floating-point number.
 *
-* @private
-* @param {Complex64} z - complex number
-* @returns {Complex64} result
+* @param z - complex number
+* @returns result
 *
 * @example
-* var Complex64 = require( '@stdlib/complex-float32' );
-* var realf = require( '@stdlib/complex-realf' );
-* var imagf = require( '@stdlib/complex-imagf' );
+* var Complex64 = require( `@stdlib/complex/float32` );
+* var realf = require( `@stdlib/complex/realf` );
+* var imagf = require( `@stdlib/complex/imagf` );
 *
 * var z1 = new Complex64( -4.2, 5.5 );
 * // returns <Complex64>
@@ -45,15 +40,15 @@ var addon = require( './../src/addon.node' );
 * // returns <Complex64>
 *
 * var re = realf( out );
-* // returns ~4.2
+* // returns 4.2
 *
 * var im = imagf( out );
 * // returns -5.5
 *
 * @example
-* var Complex64 = require( '@stdlib/complex-float32' );
-* var realf = require( '@stdlib/complex-realf' );
-* var imagf = require( '@stdlib/complex-imagf' );
+* var Complex64 = require( `@stdlib/complex/float32` );
+* var realf = require( `@stdlib/complex/realf` );
+* var imagf = require( `@stdlib/complex/imagf` );
 *
 * var z2 = new Complex64( 0.0, 0.0 );
 * // returns <Complex64>
@@ -68,9 +63,9 @@ var addon = require( './../src/addon.node' );
 * // returns -0.0
 *
 * @example
-* var Complex64 = require( '@stdlib/complex-float32' );
-* var realf = require( '@stdlib/complex-realf' );
-* var imagf = require( '@stdlib/complex-imagf' );
+* var Complex64 = require( `@stdlib/complex/float32` );
+* var realf = require( `@stdlib/complex/realf` );
+* var imagf = require( `@stdlib/complex/imagf` );
 *
 * var z3 = new Complex64( NaN, NaN );
 * // returns <Complex64>
@@ -84,12 +79,9 @@ var addon = require( './../src/addon.node' );
 * var im = imagf( out );
 * // returns NaN
 */
-function cnegf( z ) {
-	var v = addon( z );
-	return new Complex64( v.re, v.im );
-}
+declare function cnegf( z: Complex64 ): Complex64;
 
 
 // EXPORTS //
 
-module.exports = cnegf;
+export = cnegf;
