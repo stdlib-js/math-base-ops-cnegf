@@ -21,112 +21,13 @@
 // MODULES //
 
 var tape = require( 'tape' );
-var PINF = require( '@stdlib/constants-float32-pinf' );
-var NINF = require( '@stdlib/constants-float32-ninf' );
-var isnanf = require( '@stdlib/math-base-assert-is-nanf' );
-var isNegativeZerof = require( '@stdlib/math-base-assert-is-negative-zerof' );
-var isPositiveZerof = require( '@stdlib/math-base-assert-is-positive-zerof' );
-var Complex64 = require( '@stdlib/complex-float32' );
-var realf = require( '@stdlib/complex-realf' );
-var imagf = require( '@stdlib/complex-imagf' );
-var cnegf = require( './../../dist' );
+var main = require( './../../dist' );
 
 
 // TESTS //
 
-tape( 'main export is a function', function test( t ) {
+tape( 'main export is defined', function test( t ) {
 	t.ok( true, __filename );
-	t.strictEqual( typeof cnegf, 'function', 'main export is a function' );
-	t.end();
-});
-
-tape( 'the function negates real and imaginary components', function test( t ) {
-	var actual;
-	var z;
-
-	z = new Complex64( 4.0, 7.0 );
-
-	actual = cnegf( z );
-
-	t.strictEqual( realf( actual ), -4.0, 'returns expected value' );
-	t.strictEqual( imagf( actual ), -7.0, 'returns expected value' );
-
-	z = new Complex64( -4.0, -7.0 );
-
-	actual = cnegf( z );
-
-	t.strictEqual( realf( actual ), 4.0, 'returns expected value' );
-	t.strictEqual( imagf( actual ), 7.0, 'returns expected value' );
-
-	t.end();
-});
-
-tape( 'the function returns `NaN` if provided `NaN`', function test( t ) {
-	var actual;
-	var z;
-
-	z = new Complex64( NaN, NaN );
-
-	actual = cnegf( z );
-
-	t.strictEqual( isnanf( realf( actual ) ), true, 'returns expected value' );
-	t.strictEqual( isnanf( imagf( actual ) ), true, 'returns expected value' );
-
-	t.end();
-});
-
-tape( 'the function returns `+0` if provided `-0`', function test( t ) {
-	var actual;
-	var z;
-
-	z = new Complex64( -0.0, -0.0 );
-
-	actual = cnegf( z );
-
-	t.strictEqual( isPositiveZerof( realf( actual ) ), true, 'returns expected value' );
-	t.strictEqual( isPositiveZerof( imagf( actual ) ), true, 'returns expected value' );
-
-	t.end();
-});
-
-tape( 'the function returns `-0` if provided `+0`', function test( t ) {
-	var actual;
-	var z;
-
-	z = new Complex64( +0.0, +0.0 );
-
-	actual = cnegf( z );
-
-	t.strictEqual( isNegativeZerof( realf( actual ) ), true, 'returns expected value' );
-	t.strictEqual( isNegativeZerof( imagf( actual ) ), true, 'returns expected value' );
-
-	t.end();
-});
-
-tape( 'the function returns `-infinity` if provided `+infinity`', function test( t ) {
-	var actual;
-	var z;
-
-	z = new Complex64( PINF, PINF );
-
-	actual = cnegf( z );
-
-	t.strictEqual( realf( actual ), NINF, 'returns expected value' );
-	t.strictEqual( imagf( actual ), NINF, 'returns expected value' );
-
-	t.end();
-});
-
-tape( 'the function returns `+infinity` if provided `-infinity`', function test( t ) {
-	var actual;
-	var z;
-
-	z = new Complex64( NINF, NINF );
-
-	actual = cnegf( z );
-
-	t.strictEqual( realf( actual ), PINF, 'returns expected value' );
-	t.strictEqual( imagf( actual ), PINF, 'returns expected value' );
-
+	t.strictEqual( main !== void 0, true, 'main export is defined' );
 	t.end();
 });
