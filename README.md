@@ -282,6 +282,13 @@ int main( void ) {
 
 <section class="related">
 
+* * *
+
+## See Also
+
+-   <span class="package-name">[`@stdlib/math-base/ops/cneg`][@stdlib/math/base/ops/cneg]</span><span class="delimiter">: </span><span class="description">negate a double-precision complex floating-point number.</span>
+-   <span class="package-name">[`@stdlib/math-base/special/cabsf`][@stdlib/math/base/special/cabsf]</span><span class="delimiter">: </span><span class="description">compute the absolute value of a single-precision complex floating-point number.</span>
+
 </section>
 
 <!-- /.related -->
@@ -354,6 +361,14 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 [branches-url]: https://github.com/stdlib-js/math-base-ops-cnegf/blob/main/branches.md
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/math-base-ops-cnegf/main/LICENSE
+
+<!-- <related-links> -->
+
+[@stdlib/math/base/ops/cneg]: https://github.com/stdlib-js/math-base-ops-cneg
+
+[@stdlib/math/base/special/cabsf]: https://github.com/stdlib-js/math-base-special-cabsf
+
+<!-- </related-links> -->
 
 </section>
 
